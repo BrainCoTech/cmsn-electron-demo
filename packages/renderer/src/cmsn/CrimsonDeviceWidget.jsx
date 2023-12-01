@@ -27,7 +27,12 @@ class CrimsonDeviceWidget extends Component {
           //   leftIcon: { marginLeft: 22 },
           // }}
           onClick={() => CrimsonActions.disconnect(device)}>disconnect</Button>
-        <p>connectivity: {this._safeInt(device.connectivity)}</p>
+        <Button
+          variant="light"
+          radius="xl"
+          size="md"
+          onClick={() => CrimsonActions.getDeviceState(device)}>getDeviceState</Button>
+        
         <p>connectivity: {CONNECTIVITY[(this._safeInt(device.connectivity))]}</p>
         <p>contactState: {CONTACT_STATE[(this._safeInt(device.contactState))]}</p>
         <p>orientation: {ORIENTATION[(this._safeInt(device.orientation))]}</p>

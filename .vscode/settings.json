@@ -50,4 +50,5 @@
         "jszip",
         "pako"
     ],
+    "editor.inlineSuggest.showToolbar": "onHover",
 }

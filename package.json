@@ -23,7 +23,8 @@
   "dependencies": {
     "@mantine/core": "^4.1.0",
     "@mantine/hooks": "^4.1.0",
-    "crimson-sdk": "^1.4.3",
+    "crimson-sdk": "^1.4.4",
+    "crimson-node": "^0.0.5",
     "electron-store": "^8.0.1",
     "tabler-icons-react": "^1.43.0"
   },

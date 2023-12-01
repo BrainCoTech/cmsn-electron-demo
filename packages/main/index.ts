@@ -120,6 +120,21 @@ async function createWindow() {
         break;
       case 'disconnectAll':
         await cmsn.disconnectAll();
+      case 'getConnectivity':
+        var deviceId = arg.deviceId;
+        var connectivity = cmsn.getConnectivity(deviceId);
+        event.reply(cmsnResponse, { deviceId: deviceId, cmd: 'onConnectivityChanged', connectivity: connectivity });
+        break;
+      case 'getContactState':
+        var deviceId = arg.deviceId;
+        var contactState = cmsn.getContactState(deviceId);
+        event.reply(cmsnResponse, { deviceId: deviceId, cmd: 'onContactStateChanged', contactState: contactState });
+        break;
+      case 'getOrientation':
+        var deviceId = arg.deviceId;
+        var orientation = cmsn.getOrientation(deviceId);
+        event.reply(cmsnResponse, { deviceId: deviceId, cmd: 'onOrientationChanged', orientation: orientation });
+        break;  
       default:
         break;
     }
