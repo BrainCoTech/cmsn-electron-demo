@@ -134,6 +134,17 @@ async function createWindow() {
         var deviceId = arg.deviceId;
         var orientation = cmsn.getOrientation(deviceId);
         event.reply(cmsnResponse, { deviceId: deviceId, cmd: 'onOrientationChanged', orientation: orientation });
+        break;
+      case 'setSleepIdleTime':
+        var deviceId = arg.deviceId;
+        var timeInSeconds = 600;
+        cmsn.setSleepIdleTime(deviceId, timeInSeconds, (success: boolean, error: string | null) => {
+          if (success) {
+            console.log('setSleepIdleTime success');
+          } else {
+            console.error('setSleepIdleTime error: ', error);
+          }
+        });
         break;  
       default:
         break;
